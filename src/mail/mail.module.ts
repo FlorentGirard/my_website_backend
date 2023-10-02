@@ -20,7 +20,8 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
           },
         },
         defaults: {
-          from: ' "Dev Club" <mrgirardflorent@gmail.com>',
+          /*   from: ' "DEV CLUB" <mrgirardflorent@gmail.com>', */
+          from: `"Dev Club" <${process.env.MAIL_PRO}>`,
         },
         template: {
           dir: join(__dirname, 'templates'),
