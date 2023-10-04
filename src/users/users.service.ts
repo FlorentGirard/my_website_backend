@@ -15,7 +15,7 @@ export class UsersService {
     @InjectModel(User.name) private readonly userModel: Model<User>,
   ) {}
 
-  async findUserByemail(email: string) {
+  async findUserByEmail(email: string) {
     const user = await this.userModel.findOne({ email: email }).exec();
     /*  console.log(user);
     if (!user) {
@@ -25,7 +25,7 @@ export class UsersService {
   }
 
   async createUser(createUserDto: CreateUserDto) {
-    const existingUser = await this.findUserByemail(createUserDto.email);
+    const existingUser = await this.findUserByEmail(createUserDto.email);
 
     if (existingUser) {
       throw new ConflictException(
